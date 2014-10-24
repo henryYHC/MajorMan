@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Major Planning Application | Work in Progress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <script src="dist/js/jquery.js"></script>
+    <script src="function_js/reg.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/popover.js"></script>
+    <script src="dist/js/tooltip.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+    html {
+      background: #FFFFFF; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    body {
+      padding-top: 50px;
+    }
+    1
+	/*#formerror {
+		display: hidden;
+	}*/
+
+    </style>
+
+  </head>
+  <body onload = "RegForm()">
+     
+    <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="username" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="login_remember"> Remember me
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" id="login" class="btn btn-default">Sign in</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+     <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://emorysolutions.org/majorman/">MajorMan</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="active"><a href="registration.html">Register</a></li>
+          </ul>
+          <div class="navbar-right">
+          <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#signIn" onclick="load_em()">Sign in</button>
+          </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+   <!-- form begins here -->  
+
+    <div class="container">
+      <div class="row">
+        <br>
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-8">
+        <div class="alert alert-danger" id="formerror" style="display: none">Please ensure all fields are correctly filled out.</div>
+          <div class="well">
+              <form class="bs-example form-horizontal" method=post action="function_php/Register_majorman.php" id="regform">
+              <!-- <form class="bs-example form-horizontal" method=post action="function_php/Register_majorman.php"> -->
+                <fieldset>
+                  <legend>Sign up today!</legend>
+                  <div class="form-group" id="FN">
+                    <label for="inputFN" class="col-lg-2 control-label">First Name</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputFN" placeholder="First Name" name="firstname">
+
+                    </div>
+
+                  </div>	
+                
+                  <div class="form-group" id="LN">
+                    <label for="inputLN" class="col-lg-2 control-label">Last Name</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputLN" placeholder="Last Name" name="lastname">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Gender</label>
+                    <div class="col-lg-10">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="gender" id="gender1" value="M" checked="">
+                          Male
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="gender" id="gender2" value="F">
+                          Female
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group" id="birthday">
+                    <label for="date" class="col-lg-2 control-label">Birthday</label>
+                    <div class="col-lg-10">
+                      <input type="date" class="form-control" id="bday" placeholder="Birthday" name="bday">
+                    </div>
+                  </div>
+                  <div class="form-group" id="school">
+                    <label for="inputSch" class="col-lg-2 control-label">School</label>
+                    <div class="col-lg-10">
+                      <select class="form-control" name="school">
+                          <option value="Emory University">Emory University</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Class</label>
+                    <div class="col-lg-10">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="collegeclass" id="optionsRadios1" value="1" checked="">
+                          Freshman
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="collegeclass" id="optionsRadios2" value="2">
+                          Sophomore
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="collegeclass" id="optionsRadios3" value="3">
+                          Junior
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="collegeclass" id="optionsRadios4" value="4">
+                          Senior
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group" id="email">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="email">
+                    </div>
+                  </div>
+                  <div class="form-group" id="pwd">
+                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <div class="col-lg-10">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+                    </div>
+                  </div>
+                  <div class="form-group" id="repwd">
+                    <label for="inputPassword" class="col-lg-2 control-label">Re-enter Password</label>
+                    <div class="col-lg-10">
+                      <input type="password" class="form-control" id="inputRePassword" placeholder="Re-enter Password" name="repassword">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="sq" class="col-lg-2 control-label">Security Question</label>
+                    <div class="col-lg-10">
+                      <select class="form-control" id="sq" name="security_question_no">
+                        <option value ="What is your mother's maiden name?">What is your mother's maiden name?</option>
+                        <option value ="What is your favorite food?">What is your favorite food?</option>
+                        <option value ="What is your pet's name?">What is your pet's name?</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group" id="SecurityAns">
+                    <label for="textArea" class="col-lg-2 control-label">Security Answer</label>
+                    <div class="col-lg-10">
+                      <textarea class="form-control" rows="3" id="Ans" name="security_question_ans" id="inputSA"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <!-- <button class="btn btn-default">Cancel</button>  -->
+                      <button type="submit" class="btn btn-primary pull-right" id="testbtn">Submit</button>
+                    </div>
+                    
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <!-- <div class="alert alert-warning alert-dismissable" id="formerror">
+                <strong>Error!</strong> Please ensure you have correctly filled in all the required fields.
+            </div> -->
+          </div>
+          	<div class="col-lg-2">
+        	</div>
+    </div>
+    </div>
+
+    <script src="function_js/login.js"></script>
+    
+  </body>
+
+</html>

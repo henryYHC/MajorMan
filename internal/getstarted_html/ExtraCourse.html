@@ -1,0 +1,270 @@
+<style>
+    .content{
+        height: 500px;
+    }
+    .titles {
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #000000;
+        padding: 15px;
+        margin-bottom: 7px;
+    }
+    .search_results{
+        font-size: 15px;
+        padding: 10px;
+        margin-bottom: 2px;
+        border: 1px solid transparent;
+        border-radius: 0;
+        color: #000000;
+        background-color: #E8E8E8;
+        border-color: #E8E8E8;
+      }
+    .entry {
+        font-size: 15px;
+        padding-top: 10px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        border-style:solid;
+        border-width:1px;
+        color: #000000;
+        background-color: #E8E8E8;
+        border-color: #E8E8E8;
+      }
+      .box1 {
+        padding: 15px;
+        background-color: #007fff;
+        color: #ffffff;
+        margin-bottom: 15px;
+      }
+</style>
+
+        <div class="modal fade" id="InputExtraCourses" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+           <div class="modal-dialog">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h4 class="modal-title" id="myModalLabel">Customize Extra Course</h4>
+               </div>
+               <div class="modal-body">
+                 <form role="form">
+                   <div class="form-group">
+                     <label for="Extra_ClassName">Class Name</label>
+                     <input type="text" class="form-control" id="Extra_ClassName" placeholder="Class Title">
+                   </div>
+                   <div class="form-group">
+                     <label for="EquivCourse">Equivalent Emory Course <small>(if applicable)</small></label>
+                     <div class="input-group" id="EquivCourse">
+                        <div class="col-xs-6">
+                            <select class="form-control" id="Extra_Subject">
+                                <option>Not applicable</option>
+                                <option>AAS</option>
+                                <option>AFS</option>
+                                <option>AMST</option>
+                                <option>ANCMD</option>
+                                <option>ANT</option>
+                                <option>ARAB</option>
+                                <option>ARTHIST</option>
+                                <option>ARTVIS</option>
+                                <option>BIOL</option>
+                                <option>CBSC</option>
+                                <option>CHEM</option>
+                                <option>CHN</option>
+                                <option>CL</option>
+                                <option>CPLT</option>
+                                <option>CS</option>
+                                <option>DANC</option>
+                                <option>EAS</option>
+                                <option>ECON</option>
+                                <option>ECS</option>
+                                <option>EDS</option>
+                                <option>ENG</option>
+                                <option>ENGCW</option>
+                                <option>ENVS</option>
+                                <option>FILM</option>
+                                <option>FREN</option>
+                                <option>GER</option>
+                                <option>GHCS</option>
+                                <option>GRK</option>
+                                <option>HEBR</option>
+                                <option>HIST</option>
+                                <option>HLTH</option>
+                                <option>HNDI</option>
+                                <option>IDS</option>
+                                <option>ITAL</option>
+                                <option>JPN</option>
+                                <option>JRNL</option>
+                                <option>JS</option>
+                                <option>KRN</option>
+                                <option>LACS</option>
+                                <option>LAT</option>
+                                <option>LING</option>
+                                <option>MATH</option>
+                                <option>MESAS</option>
+                                <option>MUS</option>
+                                <option>NBB</option>
+                                <option>PACE</option>
+                                <option>PE</option>
+                                <option>PERS</option>
+                                <option>PHIL</option>
+                                <option>PHYS</option>
+                                <option>POLS</option>
+                                <option>PORT</option>
+                                <option>PSYC</option>
+                                <option>QTM</option>
+                                <option>REES</option>
+                                <option>SOC</option>
+                                <option>SPAN</option>
+                                <option>TBT</option>
+                                <option>THEA</option>
+                                <option>WGS</option>
+                                <option>YDD</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-6"><input type="text" class="form-control" id="Extra_CourseNo" placeholder="Course Number"></div>
+                       <span class="help-block">Please ensure this is correctly filled out so we can ensure you receive the correct credit.</span>
+                     </div>
+                   </div>
+                   <div class="row">
+                     <div class="col-xs-6">
+                     <div class="form-group">
+                       <label for="EquivCourse">GER Satisfied <small>(if applicable)</small></label>
+                       <select class="form-control" id="Extra_GER">
+                         <option>Not applicable</option>
+                         <option>FSEM</option>
+                         <option>FWRT</option>
+                         <option>WRT</option>
+                         <option>MQR</option>
+                         <option>SNT</option>
+                         <option>HSC</option>
+                         <option>HAP</option>
+                         <option>HAL</option>
+                         <option>HTH</option>
+                         <option>PED</option>
+                       </select>
+                     </div>
+                     </div>
+                     <div class="col-xs-6">
+                       <div class="form-group">
+                       <label for="Extra_Credit">Credits</label>
+                       <input type="text" class="form-control" id="Extra_Credit" placeholder="Credits">
+                       </div>
+                     </div>
+                   </div>
+                   <div class="form-group">
+                       <label for="CourseDesc">Course Description <small>(optional)</small></label>
+                       <textarea class="form-control" rows="3" id="Extra_CourseDes"></textarea>
+                       
+                   </div>
+                   <button type="button" class="btn btn-default pull-right" onclick="addExtra_Course()">Save</button>
+                   <div id="errorMsg" style="font-size:10px;color:red;"><br><br></div><br>
+                 </form>
+               </div> 
+             </div>
+           </div>
+        </div>    
+
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-6">
+      <div class="content">
+          <div class="page-header"><h1>My Extra Courses</h1></div>
+          <div class="box1">
+            Add any custom transfer credit(s) you may have from community colleges or other accredited institutions. Make sure these credits match your OPUS profile. We will keep track of these credits and how they influence your major and GER requirements. 
+          </div>
+
+          <div class="row">
+              <div class="col-xs-6">
+                  <div class="titles">Add Your Extra Course(s)</div>
+                  <button type="button" class="btn btn-primary btn-md btn-block" data-toggle="modal" data-target="#InputExtraCourses">Enter Course Details</button>
+ 
+              </div>
+              <div class="col-xs-6">
+                  <div class="titles">Entered Courses</div> 
+                  <div id="course_list"><div class='entry'>None</div></div>
+              </div>
+          </div>
+      </div>
+
+      <hr>
+      <div class="pull-right">
+        <button class="btn btn-primary" onclick="window.location.href = '#Complete'">Next</button>
+      </div>
+    </div>
+    <div class="col-xs-3">
+    </div>
+
+
+
+<script>
+    function addExtra_Course(){
+      var className = $("#Extra_ClassName").val();
+      var subject = $("#Extra_Subject").val();
+      var CourseNo = $("#Extra_CourseNo").val();
+      var GER = $("#Extra_GER").val();
+      var credit = $("#Extra_Credit").val();
+      var CourseDes = $("#Extra_CourseDes").val();
+
+      var errMsg = "";
+      if(className == ""){
+        $("#Extra_ClassName").attr("class","form-control has-error");
+        errMsg += "- Please input the title of the extra course that you wish to add.<br>";
+      } else $("#Extra_ClassName").attr("class","form-control");
+      if(credit == ""){
+        $("#Extra_Credit").attr("class","form-control has-error");
+        errMsg += "- Please input the credit number of the extra course that you wish to add.<br>";
+      } else $("#Extra_Credit").attr("class","form-control");
+
+      if(errMsg != ""){ 
+        if(className == "" && credit == ""); else errMsg += "<br>";
+        $("#errorMsg").html(errMsg); 
+        return false; 
+      }
+      
+      $.ajax({
+        type: "POST", 
+        url: "function_php/myprofile_update.php",
+        data: { ExtraCourse : 1, Extra_name : className, Extra_subject : subject, Extra_courseNo : CourseNo, Extra_GER : GER, Extra_credit : credit, Extra_courseDes : CourseDes }, 
+        success: function(data) { 
+            $.getJSON( "function_php/myprofile_fetch.php", function(data){
+                    $("#course_list:contains('None')").html('');
+                    console.log(data);
+                    $("#course_list").append("<div class='entry'>" + data.Extra_Course[data.Extra_Course.length-1] + "<div class=\"pull-right\"><span class=\"glyphicon glyphicon-info-sign\" onclick=\"viewExtraCourse(" + data.Extra_Course_No[data.Extra_Course_No.length-1] + ")\"></span>&nbsp;&nbsp;<span class=\"glyphicon glyphicon-remove\" onclick=\"removeExtraCourse(event, " + data.Extra_Course_No[data.Extra_Course_No.length-1] + ")\"></span></div></div>");
+                
+            });
+            $("#Extra_ClassName").val("");
+            $("#Extra_Subject").val("Not applicable");
+            $("#Extra_CourseNo").val("");
+            $("#Extra_GER").val("Not applicable");
+            $("#Extra_Credit").val("");
+            $("#Extra_CourseDes").val("");
+            $("#errorMsg").html("");
+            $('#InputExtraCourses').modal('hide');
+        }  
+      });  
+    }
+    function viewExtraCourse(No){
+      $.ajax({
+        type: "GET", 
+        url: "function_php/extra_course_search.php",
+        data: { ExtraCourseNo : No }, 
+        success: function(data) { 
+          var modalName = "#ExtraCourse"+No+"-modal"; 
+          $('body').append(data);
+          $(modalName).modal('show');
+        }  
+      });
+    }
+    function removeExtraCourse(event, No){
+      $.ajax({
+        type: "POST", 
+        url: "function_php/myprofile_update.php",
+        data: { removeExtraCourseNo : No }, 
+        success: function(data) { 
+            $(".entry:contains('"+event.target.parentElement.innerText+"')").remove();
+            if($("#course_list").html() == "") $("#course_list").html("<div class='entry'>None</div>");
+        }  
+      });  
+    } 
+
+</script>

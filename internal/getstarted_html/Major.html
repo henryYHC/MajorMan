@@ -1,0 +1,131 @@
+<style>
+	.content{
+        height: 500px;
+    }
+    .titles {
+    	font-size: 20px;
+    	color: #ffffff;
+    	background-color: #000000;
+    	padding: 15px;
+    	margin-bottom: 7px;
+    }
+	.search_results{
+        font-size: 15px;
+        padding: 10px;
+        margin-bottom: 2px;
+        border: 1px solid transparent;
+        border-radius: 0;
+        color: #000000;
+        background-color: #E8E8E8;
+        border-color: #E8E8E8;
+      }
+	.entry {
+        font-size: 15px;
+        padding-top: 10px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        border-style:solid;
+        border-width:1px;
+        color: #000000;
+        background-color: #E8E8E8;
+        border-color: #E8E8E8;
+      }
+      .box1 {
+      	padding: 15px;
+      	background-color: #007fff;
+      	color: #ffffff;
+      	margin-bottom: 15px;
+      }
+</style>
+
+	
+		<div class="col-xs-3">
+		</div>
+		<div class="col-xs-6">
+			<div class="content">
+				<div class="page-header"><h1>My Majors</h1></div>
+				
+					<div class="box1">
+						Search and add your current major(s) to your MajorMan account to ensure your planner is as complete as possible. We will compile your major requirements and add them to your planner, generating a recommended major path, which you can then customize to your own liking. 
+						
+					</div>
+				
+					<div class="row">
+					    <div class="col-xs-6">
+					    	<div class="titles">Add Your Major(s)</div>
+					    	<input type="text" class="form-control" id="MajorSearch" placeholder="Search by major name">
+					    	<div id="major_results"></div>
+					    </div>
+					    <div class="col-xs-6">
+					    	<div class="titles">Entered Majors</div>
+					    	<div id="major_list">
+					    		<div class='entry'>Undeclared</div>	
+					    	</div>
+					    </div>
+					</div>
+				
+				
+				
+			</div>
+			<hr>
+			<div class="pull-right">
+				<button class="btn btn-primary" onclick="window.location.href = '#Minor'">Next</button>
+			</div>
+		</div>
+		<div class="col-xs-3">
+		</div>
+	
+
+
+
+
+<script>
+	$("#MajorSearch").keyup(function(){
+   		var kw = $("#MajorSearch").val();
+   		if(kw != '')
+     	{    
+			   $.ajax({
+          		type: "GET", 
+          		url: "function_php/major_search.php",
+          		data: { kw : kw, major : 1}, 
+          		success: function(data) {        
+ 				 	$("#major_results").html(data);
+             }  
+         });   
+		  }  
+      else { 
+        $("#major_results").html("");   
+      }  
+		  return false;   
+	});
+
+	function addMajor(major){
+	  $.ajax({
+	    type: "POST", 
+	    url: "function_php/myprofile_update.php",
+	    data: { major : major }, 
+	    success: function(data) { 
+	    	$.getJSON( "function_php/myprofile_fetch.php", function(data){
+	    		$("#major_list:contains('Undeclared')").html('');
+	    		$("#major_list").append("<div class='entry'>" + data.Major[data.Major.length-1] + "<span class=\"glyphicon glyphicon-remove pull-right\" onclick=\"removeMajor(event, " + data.MajorNo[data.MajorNo.length-1] + ")\"></span></div>");
+	    	});
+	    	$("#MajorSearch").val("");
+            $("#major_results").html("");
+	    }  
+	  });
+	}
+	function removeMajor(event, majorNo){
+	  
+	    $.ajax({
+	    type: "POST", 
+	    url: "function_php/myprofile_update.php",
+	    data: { removeMajorNo : majorNo }, 
+	    success: function(data) { 
+	      $(".entry:contains('"+event.target.parentElement.innerText+"')").remove();
+	      if($("#major_list").html() == "") $("#major_list").html("<div class='entry'>Undeclared</div>");
+	    }  
+	  });
+	}
+</script>

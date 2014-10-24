@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Major Planning Application | Work in Progress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <link href='css/onepage-scroll.css' rel='stylesheet' type='text/css'>
+   <!--  <link href='css/jInvertScroll.css' rel='stylesheet' type='text/css'> -->
+
+   
+    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+    html {
+      background: #FFFFFF; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    body {
+      padding-top: 50px;
+    }
+
+    .container2 {
+      /*height: 500px;
+      overflow: auto;*/
+    }
+
+    .slide {
+      /*height: 500px;*/
+    }
+
+    .jumbotron {
+      background-color: white;
+      /*height: 475px;*/
+    }
+
+    .content-box {
+      padding: 30px;
+      /*height: 475px;*/
+    }
+
+    .img-box {
+      padding: 15px;
+      background-color: white;
+      /*height: 475px;*/
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="username" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="login_remember"> Remember me
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" id="login" class="btn btn-default">Sign in</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+     <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://emorysolutions.org/majorman/">MajorMan</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li><a href="registration.html">Register</a></li>
+          </ul>
+          <div class="navbar-right">
+          <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#signIn" onclick="load_em()">Sign in</button>
+          </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+  <!--   <div class="container"> -->
+    	<div class="main">
+      <!-- <div class="container2"> -->
+      	<section>
+        <div class="slide" id="slide_1">
+          <div class="jumbotron" style="text-align:center">
+            <h1 style="font-size:100px;"><span style="color:#007fff; font-size:50px;">Introducing,<br></span>MajorMan</h1><br>
+            <p style="color:#666666; font-size:30px;">A simpler way to manage your years at Emory University.</p><br>
+            <p><a class="btn btn-primary btn-lg" role="button" id="down1">Learn more</a></p>
+          </div>
+          <!-- <div id="down1">Hello1</div> -->
+        </div>
+        </section>
+
+
+        <section>     
+        <div class="slide" id="slide_2">
+          <div class="container">
+            <div class="col-xs-6">
+              <div class="jumbotron">
+                <h1>The old way.</h1><br>
+                <p style="color:#007fff; font-size:30px;">Managing your major, minor, and GER course paths was hard. Real hard.</p><br>
+                <p style="font-size:20px">With the convoluted mix of Course Atlas, department websites, and OPUS, how did we ever get through it?</p>
+                <!-- <p><a class="btn btn-primary btn-lg" role="button" id="down2">More</a></p> -->
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="img-box">
+              <img src="img/1_b.png" width="500" height="500">
+              </div>
+            </div>
+           </div>
+        </div>    
+        </section> 
+
+        <section>
+        <div class="slide" id="slide_3">
+          <div class="container">
+            <div class="col-xs-6">
+              <div class="jumbotron">
+                <h1>We are missing a lot.</h1><br>
+                <p>There are so many improvements that can be made, all of which will change the way we plan our Emory careers.</p>
+                <!-- <p><a class="btn btn-primary btn-lg" role="button" id="down3">More</a></p> -->
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="content-box" style="margin-top: 50px">
+                <p style="font-size:25px">Compiled major and course information</p><br>
+                <p style="font-size:25px">Credit and prerequisite error checking</p><br>
+                <p style="font-size:25px">Tracking of course demand and availability</p><br>
+                <p style="font-size:45px; color:#007fff; text-align:left;"><strong>Simplicity</strong></p>
+                
+              </div>
+            </div>
+            
+          </div>
+        </div>       
+        </section>
+
+        <section>
+        <div class="slide" id="slide_4">
+          <div class="container">
+            <div class="col-xs-6">
+              <div class="img-box">
+                <img src="img/2_b.png" width="500" height="500">
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="jumbotron">
+                <h1>MajorMan to the rescue!</h1><br>
+                <p style="font-size:35px; color:#007fff;">It's all that and more.</p><p>MajorMan is your ticket to breathing easier on enrollment time, during Add/Drop/Swap, and every day of your stay here at Emory.</p><br>
+                <!-- <p><a class="btn btn-primary btn-lg" role="button" id="down4">More</a></p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+
+        <section>
+        <div class="slide" id="slide_5">
+        	<div class="container">
+	          <div class="jumbotron" style="text-align:center">
+	            <h1 style="font-size:75px;">What are you waiting for?</h1><br>
+	            <p style="color:#666666; font-size:30px;">The perfect academic career at Emory awaits you.</p><br>
+	            <p><a class="btn btn-primary btn-lg" role="button" id="finish" href="registration.html">Register today!</a></p>
+	          </div>
+	        </div>
+        </div>
+        </section>
+
+      
+
+      <!-- <div class="progress">
+        <div class="progress-bar" role="progressbar" id="progress_bar" style="width: 0%;"></div>
+      </div> -->
+
+      </div>
+
+   <!--  </div> -->
+
+    
+    <script src="assets/js/jquery.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="function_js/jquery.scrollTo.js"></script>
+    <script src="function_js/jquery.onepage-scroll.min.js"></script>
+    <script src="function_js/login.js"></script>
+    
+    <script>
+
+    $(".main").onepage_scroll({
+      keyboard: true
+    });
+
+      $( "#down1" ).click(function() {
+        $(".main").moveDown();
+      });
+      /*$( "#down2" ).click(function() {
+        $('.container2').scrollTo('#slide_3', 1000 );
+        $('#progress_bar').css('width', '40%');
+      });
+      $( "#down3" ).click(function() {
+        $('.container2').scrollTo('#slide_4', 1000 );
+        $('#progress_bar').css('width', '60%');
+      });
+      $( "#down4" ).click(function() {
+        $('.container2').scrollTo('#slide_5', 1000 );
+        $('#progress_bar').css('width', '80%');
+      });
+      $( "#finish" ).click(function() {
+        $('#progress_bar').css('width', '100%');
+      });*/
+
+    </script>
+
+  </body>
+
+</html>

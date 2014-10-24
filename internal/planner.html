@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Major Planning Application | Work in Progress</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- Bootstrap -->
+    <link href="../dist/css/bootstrap.css" rel="stylesheet">
+    <link href="css/planner.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jquery.pageslide.css" />
+  </head>
+  <body>
+  
+  <!-- Window Size Modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="window_size">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <span style="text-align:center">Please maximize your browser window to best experience MajorMan.</span>
+        </div>
+      </div>
+    </div>
+  <!-- Window Size Modal -->
+
+     <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MajorMan</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="planner.html">Planner</a></li>
+            <li><a href="#">MajorAdviser</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+          <div class="nav navbar-nav navbar-right">
+          <p class="navbar-text" id="username"></p>
+          <!-- <button type="button" class="btn btn-success navbar-btn">Profile</button> -->
+          <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="myprofile.html">My Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+              </ul>
+          </li>
+          </ul>
+          <!-- <button type="button" class="btn btn-danger navbar-btn">Logout</button> -->
+          </div>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- start page -->
+    
+    <div class="container">
+        <!-- header -->
+        <!-- <div class="page-header">
+          <h1>My Academic Planner</h1>
+        </div> -->
+        
+        
+        <div class='container'>
+    		<div class="bottom-bar">
+         		<!-- <div style='float:left; font-size:18px; margin-top:7px;'>Version:&nbsp;&nbsp;&nbsp;</div> -->
+         		<ul style='float:left;' class="nav nav-pills">
+				  <li class="active"><a href="#">Main Version</a></li>
+				  <li><a href="#">Phil Minor</a></li>
+				  <li><a href="#">No CS</a></li>
+				  <li><a href="#"><span class="glyphicon glyphicon-plus"></span></a></li>
+				</ul>
+				<div class='pull-right'>
+					<button style='float:left; margin-right:10px;' type="button" class="btn btn-primary btn-md">Share Planner with Friends</button>
+					<button style='float:left;' type="button" class="btn btn-primary btn-md">Save to PDF</button>
+				</div>
+         	</div>
+    	</div>	
+        <br>
+        <div class="col-xs-10">
+          <div id="course_grid">
+          	<div class="row">
+          		<div class="col-xs-3 course-grid">
+          			<div class="course-grid-title">Freshman Fall</div>
+          			<div class="course-grid-content" id="Freshman_F"></div>
+          			<div class="credittext"><div class='pull-left'><span class="glyphicon glyphicon-pushpin"></span></div><span id="Freshman_F_C"></span></div>
+          		</div>
+          		<div class="col-xs-3 course-grid">
+          			<div class="course-grid-title">Sophomore Fall</div>
+          			<div class="course-grid-content" id="Sophomore_F"></div>
+          			<div class="credittext"><div class='pull-left'><span class="glyphicon glyphicon-pushpin"></span></div><span id="Sophomore_F_C"></span></div>
+          		</div>
+          		<div class="col-xs-3 course-grid">
+          			<div class="course-grid-title">Junior Fall</div>
+          			<div class="course-grid-content" id="Junior_F"></div>
+          			<div class="credittext"><div class='pull-left'><span class="glyphicon glyphicon-pushpin"></span></div><span id="Junior_F_C"></span></div>
+          		</div>
+          		<div class="col-xs-3 course-grid">
+          			<div class="course-grid-title">Senior Fall</div>
+          			<div class="course-grid-content" id="Senior_F"></div>
+          			<div class="credittext"><div class='pull-left'><span class="glyphicon glyphicon-pushpin"></span></div><span id="Senior_F_C"></span></div>
+          		</div>
+          	</div><br><br>
+          	<div class="row">
+          		<div class="col-xs-3 course-grid">
+          			<div class="course-grid-title">Freshman Spring</div>
+          			<div class="course-grid-content" id="Freshman_S"></div>
+          			<div class="credittext"><div class='pull-left'><span class="glyphicon glyphicon-pushpin"></span></div><span id="Freshman_S_C"></span></div>
+          		</div>
+          		<div class="col-xs-3 course-grid">
+          			<div class="course-grid-title">Sophomore Spring</div>
+          			<div class="course-grid-content" id="Sophomore_S"></div>
+          			<div class="credittext"><div class='pull-left'><span class="glyphicon glyphicon-pushpin"></span></div><span id="Sophomore_S_C"></span></div>
+          		</div>
+          		<div class="col-xs-3 course-grid">
+          			<div class="course-grid-title">Junior Spring</div>
+          			<div class="course-grid-content" id="Junior_S"></div>
+          			<div class="credittext"><div class='pull-left'><span class="glyphicon glyphicon-pushpin"></span></div><span id="Junior_S_C"></span></div>
+          		</div>
+          		<div class="col-xs-3 course-grid">
+          			<div class="course-grid-title">Senior Spring</div>
+          			<div class="course-grid-content" id="Senior_S"></div>
+          			<div class="credittext"><div class='pull-left'><span class="glyphicon glyphicon-pushpin"></span></div><span id="Senior_S_C"></span></div>
+          		</div>
+          	</div>
+            <!-- <div class="row"><div class="col-xs-2 course-grid" id="Freshman_F">Freshman Fall<div class="credittext" id="Freshman_F_C"></div></div>
+            <div class="col-xs-2 course-grid" id="Sophomore_F">Sophomore Fall<div class="credittext" id="Sophomore_F_C"></div></div>
+            <div class="col-xs-2 course-grid" id="Junior_F">Junior Fall<div class="credittext" id="Junior_F_C"></div></div>
+            <div class="col-xs-2 course-grid" id="Senior_F">Senior Fall<div class="credittext" id="Senior_F_C"></div></div></div> -->
+            <!-- <div class="col-xs-2 course-grid" id="Online_course">Online courses<div class="credittext" id="Online_course_C"></div></div> -->
+          <!--   <div class="row"><div class="col-xs-2 course-grid" id="Freshman_S">Freshman Spring<div class="credittext" id="Freshman_S_C"></div></div>
+            <div class="col-xs-2 course-grid" id="Sophomore_S">Sophomore Spring<div class="credittext" id="Sophomore_S_C"></div></div>
+            <div class="col-xs-2 course-grid" id="Junior_S">Junior Spring<div class="credittext" id="Junior_S_C"></div></div>
+            <div class="col-xs-2 course-grid" id="Senior_S">Senior Spring<div class="credittext" id="Senior_S_C"></div></div></div> -->
+            <!-- <div class="col-xs-2 course-grid" id="Summer_course">Summer courses<div class="credittext" id="Summer_course_C"></div></div> -->
+          </div>
+         	
+
+        </div>
+        
+        <div class="col-xs-2">
+        	
+            <button type="button" class="btn btn-success btn-lg btn-block">Save Changes</button><br>
+            <div class="add-course"><button type="button" class="btn btn-primary btn-md btn-block">Add Courses</button></div>
+            <div class="change-major"><button type="button" class="btn btn-primary btn-md btn-block">Change Major</button></div>
+            <div class="error-log"><button type="button" class="btn btn-primary btn-md btn-block">Planner Errors&nbsp;&nbsp;<span class="badge" id="error_count"></span></button></div><br>
+	        	<div class="sidebar-title-req">Remaining Requirements</div>
+	        	<div id="RemainingRequirement">     		
+		        		<div class="stats-title1">GERs</div> 		
+	        				<div class="stats-elements">FESM: <span id="FSEM_num" class="pull-right stats-numbers"></span></div>
+	        				<div class="stats-elements-r">FWRT: <span id="FWRT_num" class="pull-right stats-numbers"></span></div><br>
+	        				<div class="stats-elements">WRT: <span id="WRT_num" class="pull-right stats-numbers"></span></div>
+	        				<div class="stats-elements-r">MQR: <span id="MQR_num" class="pull-right stats-numbers"></span></div><br>
+	        				<div class="stats-elements">SNT: <span id="SNT_num" class="pull-right stats-numbers"></span></div>
+	        				<div class="stats-elements-r">HSC: <span id="HSC_num" class="pull-right stats-numbers"></span></div><br>
+	        				<div class="stats-elements">HAP: <span id="HAP_num" class="pull-right stats-numbers"></span></div>
+	        				<div class="stats-elements-r">HAL: <span id="HAL_num" class="pull-right stats-numbers"></span></div><br>
+	        				<div class="stats-elements">HTH: <span id="HTH_num" class="pull-right stats-numbers"></span></div>
+	        				<div class="stats-elements-r">PED: <span id="PED_num" class="pull-right stats-numbers"></span></div><br><br>	 
+	        			<div class="stats-title2">Majors</div>
+	        			  <div id="major_stat"></div>
+	        			<div class="stats-title1">Credits</div>
+	        				<div class="stats-elements-block">Total Credits (Planned): <span id="Total_credit_college" class="pull-right stats-numbers">0</span></div>
+                  <!-- <div class="stats-elements-block">Total Credits (Transferred): <span id="Total_credit_transfer" class="pull-right stats-numbers">0</span></div> -->
+                  <!-- <div class="stats-elements-block">Total Credits: <span id="Total_credit" class="pull-right stats-numbers">0</span></div> -->
+                  <div class="stats-elements-block">Remaining Credits: <span id="Total_credit_remain" class="pull-right stats-numbers">124</span></div>
+	        				
+	        	</div>
+	        	
+	        	<div class="alert alert-danger" style='font-size:10px; margin-top:18px;'>Warning: Please refer to OPUS for all updated information.</div>
+
+	        	
+	        
+        </div>
+
+    </div>
+    
+    <div class="container">
+      <br>
+      <hr>
+      <p>Copyright 2014 MajorMan. MajorMan created by Henry Chen and Nihar Parikh.</p>
+    </div>
+
+    <div class="slide-out-div">
+        <!-- <a class="handle" style="display:none"></a> -->
+        <div class="add-course"><button type="button" class="btn btn-success btn-md btn-block">Done</button></div>
+          <div class="sidebar-title">
+            <input type="text" class="form-control" id="course_search" placeholder=" Search by subject or number">
+          </div>
+          <div class="sidebar-content-search" id="course_result" style="display: none"></div>
+          <div class="sidebar-title">
+            Subjects
+          </div>
+          <div class="sidebar-content1" id="subject">
+            <!-- <div id="AAS_T" class="sidebar-sectionheader">AAS</div><div id="AAS"></div> -->
+            <div id="AAS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#AAS">AAS</div>
+            <div id="AAS" class="collapse out"></div>
+            <div id="AFS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#AFS">AFS</div>
+            <div id="AFS" class="collapse out"></div><div id="AMST_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#AMST">AMST</div>
+            <div id="AMST" class="collapse out"></div><div id="ANCMED_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ANCMED">ANCMED</div>
+            <div id="ANCMED" class="collapse out"></div><div id="ANT_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ANT">ANT</div>
+            <div id="ANT" class="collapse out"></div><div id="ARAB_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ARAB">ARAB</div>
+            <div id="ARAB" class="collapse out"></div><div id="ARTHIST_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ARTHIST">ARTHIST</div>
+            <div id="ARTHIST" class="collapse out"></div><div id="ARTVIS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ARTVIS">ARTVIS</div>
+            <div id="ARTVIS" class="collapse out"></div><div id="BIOL_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#BIOL">BIOL</div>
+            <div id="BIOL" class="collapse out"></div><div id="CBSC_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#CBSC">CBSC</div>
+            <div id="CBSC" class="collapse out"></div><div id="CHEM_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#CHEM">CHEM</div>
+            <div id="CHEM" class="collapse out"></div><div id="CHN_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#CHN">CHN</div>
+            <div id="CHN" class="collapse out"></div><div id="CL_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#CL">CL</div>
+            <div id="CL" class="collapse out"></div><div id="CPLT_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#CPLT">CPLT</div>
+            <div id="CPLT" class="collapse out"></div><div id="CS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#CS">CS</div>
+            <div id="CS" class="collapse out"></div><div id="DANC_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#DANC">DANC</div>
+            <div id="DANC" class="collapse out"></div><div id="EAS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#EAS">EAS</div>
+            <div id="EAS" class="collapse out"></div><div id="ECON_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ECON">ECON</div>
+            <div id="ECON" class="collapse out"></div><div id="ECS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ECS">ECS</div>
+            <div id="ECS" class="collapse out"></div><div id="EDS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#EDS">EDS</div>
+            <div id="EDS" class="collapse out"></div><div id="ENG_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ENG">ENG</div>
+            <div id="ENG" class="collapse out"></div><div id="ENGCW_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ENGCW">ENGCW</div>
+            <div id="ENGCW" class="collapse out"></div><div id="ENVS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ENVS">ENVS</div>
+            <div id="ENVS" class="collapse out"></div><div id="FILM_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#FILM">FILM</div>
+            <div id="FILM" class="collapse out"></div><div id="FREN_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#FREN">FREN</div>
+            <div id="FREN" class="collapse out"></div><div id="GER_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#GER">GER</div>
+            <div id="GER" class="collapse out"></div><div id="GHCS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#GHCS">GHCS</div>
+            <div id="GHCS" class="collapse out"></div><div id="GRK_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#GRK">GRK</div>
+            <div id="GRK" class="collapse out"></div><div id="HEBR_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#HEBR">HEBR</div>
+            <div id="HEBR" class="collapse out"></div><div id="HIST_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#HIST">HIST</div>
+            <div id="HIST" class="collapse out"></div><div id="HLTH_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#HLTH">HLTH</div>
+            <div id="HLTH" class="collapse out"></div><div id="HNDI_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#HNDI">HNDI</div>
+            <div id="HNDI" class="collapse out"></div><div id="IDS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#IDS">IDS</div>
+            <div id="IDS" class="collapse out"></div><div id="ITAL_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#ITAL">ITAL</div>
+            <div id="ITAL" class="collapse out"></div><div id="JPN_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#JPN">JPN</div>
+            <div id="JPN" class="collapse out"></div><div id="JRNL_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#JRNL">JRNL</div>
+            <div id="JRNL" class="collapse out"></div><div id="JS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#JS">JS</div>
+            <div id="JS" class="collapse out"></div><div id="KRN_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#KRN">KRN</div>
+            <div id="KRN" class="collapse out"></div><div id="LACS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#LACS">LACS</div>
+            <div id="LACS" class="collapse out"></div><div id="LAT_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#LAT">LAT</div>
+            <div id="LAT" class="collapse out"></div><div id="LING_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#LING">LING</div>
+            <div id="LING" class="collapse out"></div><div id="MATH_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#MATH">MATH</div>
+            <div id="MATH" class="collapse out"></div><div id="MESAS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#MESAS">MESAS</div>
+            <div id="MESAS" class="collapse out"></div><div id="MUS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#MUS">MUS</div>
+            <div id="MUS" class="collapse out"></div><div id="NBB_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#NBB">NBB</div>
+            <div id="NBB" class="collapse out"></div><div id="PACE_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#PACE">PACE</div>
+            <div id="PACE" class="collapse out"></div><div id="PE_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#PE">PE</div>
+            <div id="PE" class="collapse out"></div><div id="PERS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#PERS">PERS</div>
+            <div id="PERS" class="collapse out"></div><div id="PHIL_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#PHIL">PHIL</div>
+            <div id="PHIL" class="collapse out"></div><div id="PHYS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#PHYS">PHYS</div>
+            <div id="PHYS" class="collapse out"></div><div id="POLS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#POLS">POLS</div>
+            <div id="POLS" class="collapse out"></div><div id="PORT_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#PORT">PORT</div>
+            <div id="PORT" class="collapse out"></div><div id="PSYC_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#PSYC">PSYC</div>
+            <div id="PSYC" class="collapse out"></div><div id="QTM_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#QTM">QTM</div>
+            <div id="QTM" class="collapse out"></div><div id="REES_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#REES">REES</div>
+            <div id="REES" class="collapse out"></div><div id="SOC_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#SOC">SOC</div>
+            <div id="SOC" class="collapse out"></div><div id="SPAN_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#SPAN">SPAN</div>
+            <div id="SPAN" class="collapse out"></div><div id="TBT_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#TBT">TBT</div>
+            <div id="TBT" class="collapse out"></div><div id="THEA_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#THEA">THEA</div>
+            <div id="THEA" class="collapse out"></div><div id="WGS_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#WGS">WGS</div>
+            <div id="WGS" class="collapse out"></div><div id="YDD_T" class="sidebar-sectionheader" data-toggle="collapse" data-target="#YDD">YDD</div>
+            <div id="YDD" class="collapse out"></div>
+          </div>
+          <div class="sidebar-title">
+            My GERs
+          </div>
+          <div class="sidebar-content1" id="GER">
+            <div id="FSEM_G" class="sidebar-sectionheader" data-toggle="collapse" data-target="#FSEM">Area I - FSEM</div>
+            <div id="FSEM" class="collapse out"></div><div id="FWRT_G" class="sidebar-sectionheader" data-toggle="collapse" data-target="#FWRT">Area II - FWRT</div>
+            <div id="FWRT" class="collapse out"></div><div id="WRT_G" class="sidebar-sectionheader" data-toggle="collapse" data-target="#WRT">Area III - WRT</div>
+            <div id="WRT" class="collapse out"></div><div id="MQR_G" class="sidebar-sectionheader" data-toggle="collapse" data-target="#MQR">Area IV - MQR</div>
+            <div id="MQR" class="collapse out"></div><div id="SNT_G" class="sidebar-sectionheader" data-toggle="collapse" data-target="#SNT">Area V - SNT</div>
+            <div id="SNT" class="collapse out"></div><div id="HSC_G" class="sidebar-sectionheader" data-toggle="collapse" data-target="#HSC">Area VI - HSC</div>
+            <div id="HSC" class="collapse out"></div><div id="HAP_G" class="sidebar-sectionheader" data-toggle="collapse" data-target="#HAP">Area VII - HAP</div>
+            <div id="HAP" class="collapse out"></div><div id="HAL_G" class="sidebar-sectionheader" data-toggle="collapse" data-target="#HAL">Area VII - HAL</div>
+            <div id="HAL" class="collapse out"></div><div id="HTH_G" class="sidebar-sectionheader" data-toggle="collapse" data-target="#HTH">Area VIII - HTH</div>
+            <div id="HTH" class="collapse out"></div><div id="PED_G" class="sidebar-sectionheader" data-toggle="collapse" data-target="#PED">Area IX - PED</div>
+            <div id="PED" class="collapse out"></div>
+          </div>
+          
+          <!-- <div class="sidebar-title">
+            My Custom Classes
+          </div>
+          <div class="sidebar-content">
+            <input type="text" class="form-control">
+          </div> -->
+       </div> 
+        <!-- END SIDEBAR -->
+
+
+       
+
+
+    <div class="slide-out-div2">
+      <div class="change-major"><button type="button" class="btn btn-success btn-md btn-block">Done</button></div>    
+      <div class="change-major-title">Majors</div>
+      <div class="sidebar-content2">
+        <div id="major_list"></div>
+      </div>
+      <div class="change-major-title">
+            Major Requirements
+      </div>
+      <div class="error-log-title">Requirements</div>
+      <div id="major_req_stat_sidebar" class="sidebar-content">
+      
+      </div>
+      <div class="error-log-title">Electives</div>
+      <div id="major_ele_stat_sidebar" class="sidebar-content">
+      
+      </div>
+    </div>
+
+    <div class="slide-out-div3">
+      <div class="error-log"><button type="button" class="btn btn-success btn-md btn-block">Done</button></div>
+      <div class="error-log-title">Planner Errors</div>
+      <div class="error-log-content" id="error-log-content">
+      </div>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="function_js/login_function.js"></script>
+    <script src="function_js/planner.js"></script>
+    <script src="function_js/autoAddClass.js"></script>
+    <script src="function_js/plannerValidation.js"></script>
+    <script src="function_js/major_search.js"></script>
+
+    <script src="function_js/jquery.tabSlideOut.v1.3.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $('.slide-out-div').tabSlideOut({
+            tabHandle: '.add-course',                     //class of the element that will become your tab
+            /*pathToTabImage: 'img/tab.gif', 				//path to the image for the tab //Optionally can be set using css
+            imageHeight: '200px',                     //height of tab image           //Optionally can be set using css
+            imageWidth: '40px',*/                       //width of tab image            //Optionally can be set using css
+            tabLocation: 'right',                      //side of screen where tab lives, top, right, bottom, or left
+            speed: 200,                               //speed of animation
+            action: 'click',                          //options: 'click' or 'hover', action to trigger animation
+            topPos: '50px',                          //position from the top/ use if tabLocation is left or right
+            leftPos: '0px',                          //position from left/ use if tabLocation is bottom or top
+            fixedPosition: true                      //options: true makes it stick(fixed position) on scroll
+        });
+
+    });
+	$(function(){
+        $('.slide-out-div2').tabSlideOut({
+            tabHandle: '.change-major',                     //class of the element that will become your tab
+            /*pathToTabImage: 'img/tab.gif', 				//path to the image for the tab //Optionally can be set using css
+            imageHeight: '200px',                     //height of tab image           //Optionally can be set using css
+            imageWidth: '40px', */                      //width of tab image            //Optionally can be set using css
+            tabLocation: 'right',                      //side of screen where tab lives, top, right, bottom, or left
+            speed: 200,                               //speed of animation
+            action: 'click',                          //options: 'click' or 'hover', action to trigger animation
+            topPos: '50px',                          //position from the top/ use if tabLocation is left or right
+            leftPos: '0px',                          //position from left/ use if tabLocation is bottom or top
+            fixedPosition: true                      //options: true makes it stick(fixed position) on scroll
+        });
+
+    });
+  $(function(){
+        $('.slide-out-div3').tabSlideOut({
+            tabHandle: '.error-log',                     //class of the element that will become your tab
+            /*pathToTabImage: 'img/tab.gif',        //path to the image for the tab //Optionally can be set using css
+            imageHeight: '200px',                     //height of tab image           //Optionally can be set using css
+            imageWidth: '40px', */                      //width of tab image            //Optionally can be set using css
+            tabLocation: 'right',                      //side of screen where tab lives, top, right, bottom, or left
+            speed: 200,                               //speed of animation
+            action: 'click',                          //options: 'click' or 'hover', action to trigger animation
+            topPos: '50px',                          //position from the top/ use if tabLocation is left or right
+            leftPos: '0px',                          //position from left/ use if tabLocation is bottom or top
+            fixedPosition: true                      //options: true makes it stick(fixed position) on scroll
+        });
+
+    });
+
+    </script>
+  </body>
+
+</html>
