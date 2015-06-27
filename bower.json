@@ -1,0 +1,20 @@
+{
+	"name": "MajorMan",
+	"version": "0.0.1",
+	"description": " A smart academic advising tool for students at Emory University",
+	"dependencies": {
+		 "bootstrap": "latest",
+	    "angular": "latest",
+	    "angular-resource": "latest",
+	    "angular-mocks": "latest",
+	    "angular-cookies": "latest",
+	    "angular-route": "latest",
+	    "angular-animate": "latest",
+	    "angular-touch": "latest",
+	    "angular-sanitize": "latest",
+	    "angular-bootstrap": "~0.11.2",
+	    "angular-ui-utils": "~0.1.1",
+	    "angular-ui-router": "#master",
+	    "jquery": "~2.1.4"
+	}
+}
