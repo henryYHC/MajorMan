@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ScappleDocument Version="1.1" ID="9579D8FD-8A1F-4466-A612-7BE2373793BA">
     <Notes>
-        <Note ID="0" FontSize="19.0" Position="179.804688,458.457031" Width="51.0">
+        <Note ID="0" FontSize="19.0" Position="1039.0,629.0" Width="51.0">
             <Appearance>
                 <Alignment>Left</Alignment>
             </Appearance>
             <String>User</String>
-            <ConnectedNoteIDs>1-3</ConnectedNoteIDs>
+            <ConnectedNoteIDs>1-3, 17, 21, 23</ConnectedNoteIDs>
             <Formatting>
                 <FormatRange Bold="Yes">0,4</FormatRange>
             </Formatting>
         </Note>
-        <Note ID="1" FontSize="12.0" Position="41.238281,293.492188" Width="181.0">
+        <Note ID="1" FontSize="12.0" Position="845.0,637.0" Width="181.0">
             <Appearance>
                 <Alignment>Left</Alignment>
             </Appearance>
@@ -25,108 +25,232 @@
 8. Birthday           (Date)
 9. School             (String)
 10. Class             (Integer)
-11. Email             (String)</String>
+11. Email             (String)
+12. Created         (Datetime)
+13. Updated        (Datetime)
+14. isActive         (Boolean)</String>
             <ConnectedNoteIDs>0</ConnectedNoteIDs>
         </Note>
-        <Note ID="2" FontSize="12.0" Position="223.167969,346.917969" Width="188.0">
+        <Note ID="2" FontSize="12.0" Position="866.0,583.0" Width="192.0">
             <Appearance>
                 <Alignment>Left</Alignment>
             </Appearance>
-            <String>12. Customized classes ([Object])</String>
+            <String>15. Customized classes ([Course])</String>
             <ConnectedNoteIDs>0, 5</ConnectedNoteIDs>
         </Note>
-        <Note ID="3" FontSize="12.0" Position="308.355469,438.222656" Width="129.0">
+        <Note ID="3" FontSize="12.0" Position="1134.0,635.0" Width="135.0">
             <Appearance>
                 <Alignment>Left</Alignment>
             </Appearance>
-            <String>13. Planners ([Object])</String>
+            <String>16. Planners ([Planner])</String>
             <ConnectedNoteIDs>0, 4</ConnectedNoteIDs>
         </Note>
-        <Note ID="4" FontSize="19.0" Position="541.539062,376.824219" Width="79.0">
+        <Note ID="4" FontSize="19.0" Position="1350.0,553.0" Width="79.0">
             <Appearance>
                 <Alignment>Left</Alignment>
             </Appearance>
             <String>Planner</String>
-            <ConnectedNoteIDs>3</ConnectedNoteIDs>
+            <ConnectedNoteIDs>3, 6, 11</ConnectedNoteIDs>
             <Formatting>
                 <FormatRange Bold="Yes">0,7</FormatRange>
             </Formatting>
         </Note>
-        <Note ID="5" FontSize="19.0" Position="202.941406,197.6875" Width="74.0">
+        <Note ID="5" FontSize="19.0" Position="1025.0,336.0" Width="74.0">
             <Appearance>
                 <Alignment>Left</Alignment>
             </Appearance>
             <String>Course</String>
-            <ConnectedNoteIDs>2</ConnectedNoteIDs>
+            <ConnectedNoteIDs>2, 7-8, 10, 25</ConnectedNoteIDs>
             <Formatting>
                 <FormatRange Bold="Yes">0,6</FormatRange>
             </Formatting>
         </Note>
-        <Note ID="6" FontSize="19.0" Position="472.558594,198.351562" Width="125.0">
+        <Note ID="6" FontSize="19.0" Position="1565.0,451.0" Width="125.0">
             <Appearance>
                 <Alignment>Left</Alignment>
             </Appearance>
             <String>Requirement</String>
-            <ConnectedNoteIDs>7-8</ConnectedNoteIDs>
+            <ConnectedNoteIDs>4, 7-8, 17-18</ConnectedNoteIDs>
             <Formatting>
                 <FormatRange Bold="Yes">0,11</FormatRange>
             </Formatting>
         </Note>
-        <Note ID="7" FontSize="15.0" Position="643.777344,179.316406" Width="49.0">
+        <Note ID="7" FontSize="15.0" Position="1623.0,351.0" Width="49.0">
             <Appearance>
                 <Alignment>Left</Alignment>
             </Appearance>
             <String>Major</String>
-            <ConnectedNoteIDs>6</ConnectedNoteIDs>
+            <ConnectedNoteIDs>5-6, 19, 21</ConnectedNoteIDs>
             <Formatting>
                 <FormatRange Bold="Yes">0,5</FormatRange>
             </Formatting>
         </Note>
-        <Note ID="8" FontSize="15.0" Position="518.160156,126.855469" Width="49.0">
+        <Note ID="8" FontSize="15.0" Position="1496.0,282.0" Width="49.0">
             <Appearance>
                 <Alignment>Left</Alignment>
             </Appearance>
             <String>Minor</String>
-            <ConnectedNoteIDs>6</ConnectedNoteIDs>
+            <ConnectedNoteIDs>5-6, 20, 23</ConnectedNoteIDs>
             <Formatting>
                 <FormatRange Bold="Yes">0,5</FormatRange>
             </Formatting>
         </Note>
+        <Note ID="10" FontSize="15.0" Position="1491.0,576.0" Width="123.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>Planner-Section</String>
+            <ConnectedNoteIDs>5, 11-12</ConnectedNoteIDs>
+            <Formatting>
+                <FormatRange Bold="Yes">0,15</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="11" FontSize="12.0" Position="1328.0,653.0" Width="225.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>1. Planner-Section ([Planner-Section])</String>
+            <ConnectedNoteIDs>4, 10</ConnectedNoteIDs>
+        </Note>
+        <Note ID="12" FontSize="12.0" Position="1578.0,614.0" Width="161.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>1. Id                     (Unique Id)
+2. ParentPalnner (Planner) 
+3. SectionName  (String)
+4. Courses           ([Course])
+5. CreditCount     (Integer)
+6. Created            (Datetime)
+7. Updated           (Datetime)
+8. isActive            (Boolean)</String>
+            <ConnectedNoteIDs>10</ConnectedNoteIDs>
+        </Note>
+        <Note ID="17" FontSize="19.0" Position="1252.0,225.0" Width="50.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>GER</String>
+            <ConnectedNoteIDs>0, 6, 24</ConnectedNoteIDs>
+            <Formatting>
+                <FormatRange Bold="Yes">0,3</FormatRange>
+            </Formatting>
+        </Note>
+        <Note ID="18" FontSize="12.0" Position="1746.0,415.0" Width="227.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>1. Id                       (Unique Id)
+2. Type                  (Enum: [course, area])
+3. CourseList         ([Course])
+4. RequiredCount  (Integer)
+5. CreditBound      (Integer)
+5. Created             (Datetime)
+6. Updated            (Datetime)
+7. isActive             (Boolean)</String>
+            <ConnectedNoteIDs>6</ConnectedNoteIDs>
+        </Note>
+        <Note ID="19" FontSize="12.0" Position="1693.0,279.0" Width="193.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>1. Id                        (Unique Id)
+2. Requirements    ([Requirement])
+3. Created              (Datetime)
+4. Updated             (Datetime)
+5. isActive              (Boolean)</String>
+            <ConnectedNoteIDs>7</ConnectedNoteIDs>
+        </Note>
+        <Note ID="20" FontSize="12.0" Position="1577.0,187.0" Width="193.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>1. Id                        (Unique Id)
+2. Requirements    ([Requirement])
+3. Created              (Datetime)
+4. Updated             (Datetime)
+5. isActive              (Boolean)</String>
+            <ConnectedNoteIDs>8</ConnectedNoteIDs>
+        </Note>
+        <Note ID="21" FontSize="12.0" Position="1212.0,544.0" Width="113.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>17. Majors ([Major])</String>
+            <ConnectedNoteIDs>0, 7</ConnectedNoteIDs>
+        </Note>
+        <Note ID="23" FontSize="12.0" Position="1186.0,491.0" Width="113.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>18. Minors ([Minor])</String>
+            <ConnectedNoteIDs>0, 8</ConnectedNoteIDs>
+        </Note>
+        <Note ID="24" FontSize="12.0" Position="1182.0,131.0" Width="193.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>1. Id                        (Unique Id)
+2. Requirements    ([Requirement])
+3. Created              (Datetime)
+4. Updated             (Datetime)
+5. isActive              (Boolean)</String>
+            <ConnectedNoteIDs>17</ConnectedNoteIDs>
+        </Note>
+        <Note ID="25" FontSize="12.0" Position="692.914062,187.347656" Width="300.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>1. Id                        (Unique Id)
+2. Type                   (Enum:[course, ap, ib, customized])
+3. CourseId            (String)
+4. Subject               (Enum:String)
+5. Number              (Integer)
+6. Area                    (Enum:String)
+7. CreditCount        (Integer)
+8. Description         (String)
+9. Requirement      ([Requirement]) 
+10. Availability        (Enum:String)
+11. Created            (Datetime)
+12. Updated           (Datetime)
+13. isActive            (Boolean)</String>
+            <ConnectedNoteIDs>5</ConnectedNoteIDs>
+        </Note>
     </Notes>
     <BackgroundShapes></BackgroundShapes>
-    <AutoFit>0-3, 5-8</AutoFit>
+    <AutoFit>0-3, 5-8, 10, 12, 17-21, 23-25</AutoFit>
     <NoteStyles>
-        <Style Name="Title Text" ID="3FF7AF4E-ABD8-4A6C-A3FB-3BEA84EACD41" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="No" AffectNoteBody="No" AffectFade="No">
-            <FontSize>28.0</FontSize>
-            <IsBold>Yes</IsBold>
-        </Style>
-        <Style Name="Red Text" ID="199359B0-9BE2-4E3E-8AF6-B4064D913606" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="Yes" AffectNoteBody="No" AffectFade="No">
-            <TextColor>1.0 0.0 0.0</TextColor>
+        <Style Name="Blue Bubble" ID="4EF7AD0B-F29E-4CFA-9A96-3C7F7F8D8CDF" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.477193 0.557066 0.76433</BorderColor>
+            <FillColor>0.840969 0.866828 0.925903</FillColor>
         </Style>
         <Style Name="Brown Bubble" ID="E4EED091-696F-4FC9-A159-3BDAE63AA729" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
             <BorderThickness>1</BorderThickness>
             <BorderColor>0.290055 0.1523 0.182215</BorderColor>
             <FillColor>0.940019 0.892907 0.779716</FillColor>
         </Style>
-        <Style Name="Yellow Bubble" ID="4A4A9639-FCAF-4BF6-93FC-EBAD727AA237" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
-            <BorderThickness>1</BorderThickness>
-            <BorderColor>0.756763 0.785592 0.373258</BorderColor>
-            <FillColor>0.906773 0.910625 0.634363</FillColor>
-        </Style>
         <Style Name="Green Bubble" ID="0F1232D5-6E15-4DCA-9626-7A8DC9037CC0" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
             <BorderThickness>1</BorderThickness>
             <BorderColor>0.331867 0.609932 0.356197</BorderColor>
             <FillColor>0.790123 0.882327 0.80198</FillColor>
         </Style>
-        <Style Name="Blue Bubble" ID="4EF7AD0B-F29E-4CFA-9A96-3C7F7F8D8CDF" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
-            <BorderThickness>1</BorderThickness>
-            <BorderColor>0.477193 0.557066 0.76433</BorderColor>
-            <FillColor>0.840969 0.866828 0.925903</FillColor>
-        </Style>
         <Style Name="Pink Bubble" ID="F425455A-D358-4C6E-9E3C-00703B7F20B1" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
             <BorderThickness>1</BorderThickness>
             <BorderColor>0.747881 0.366532 0.542813</BorderColor>
             <FillColor>0.918452 0.807302 0.863467</FillColor>
+        </Style>
+        <Style Name="Red Text" ID="199359B0-9BE2-4E3E-8AF6-B4064D913606" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="Yes" AffectNoteBody="No" AffectFade="No">
+            <TextColor>1.0 0.0 0.0</TextColor>
+        </Style>
+        <Style Name="Title Text" ID="3FF7AF4E-ABD8-4A6C-A3FB-3BEA84EACD41" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="No" AffectNoteBody="No" AffectFade="No">
+            <FontSize>28.0</FontSize>
+            <IsBold>Yes</IsBold>
+        </Style>
+        <Style Name="Yellow Bubble" ID="4A4A9639-FCAF-4BF6-93FC-EBAD727AA237" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.756763 0.785592 0.373258</BorderColor>
+            <FillColor>0.906773 0.910625 0.634363</FillColor>
         </Style>
     </NoteStyles>
     <UISettings>
